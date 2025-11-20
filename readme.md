@@ -1,5 +1,15 @@
 # Network Quality — ROS 2 (Jazzy) Package
 
+
+`network_quality` monitors a robot's Ethernet link and **always publishes** a concise network quality message and diagnostics so your teleoperation stack can make decisions even when the interface is down.
+
+This version:
+- ALWAYS publishes `/network/quality` JSON (concise by default).  
+- If interface is **down**, publishes `quality_score: 0` and zero bandwidth with a `notes` field (when `verbose=true`).  
+- Diagnostics (`/diagnostics`) always include `quality_score`.  
+- Optional `verbose` parameter adds more fields for debugging (rtt, jitter, packet_loss, iface, link_up, notes).
+
+
 > **Keep calm and probe the link.**  
 > A small, opinionated ROS 2 node that watches your robot's Ethernet connection like a hawk — measuring latency, jitter, packet loss, and interface bandwidth — and tells you when it's time to stop streaming full-HD video and hand control to local autonomy.
 

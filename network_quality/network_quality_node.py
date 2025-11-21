@@ -18,7 +18,8 @@ from __future__ import annotations
 
 import rclpy
 from rclpy.node import Node
-from rclpy.parameter import Parameter, SetParametersResult
+from rclpy.parameter import Parameter
+from rcl_interfaces.msg import SetParametersResult
 from std_msgs.msg import String
 from diagnostic_msgs.msg import DiagnosticArray, DiagnosticStatus, KeyValue
 
